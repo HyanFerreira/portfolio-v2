@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const slider = document.querySelector('.container');
+  const slider = document.querySelector('.container-slider');
   const about = document.querySelector('#about');
   const skills = document.querySelector('#skills');
   const projects = document.querySelector('#projects');
