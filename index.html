@@ -14,38 +14,78 @@
 </head>
 
 <body>
-    <nav class="navigation">
-        <div class="nav-padding">
-            <div class="logotipo">
-                <a href="index.html">
-                    <img src="./assets/img/logotipo.svg" alt="logotipo">
-                </a>
-            </div>
-            <div class="nav-links">
-                <ul class="ul-links">
-                    <li class="link-item">
-                        <a href="#">Sobre</a>
-                    </li>
-                    <li class="link-item">
-                        <a href="#">Habilidades</a>
-                    </li>
-                    <li class="link-item">
-                        <a href="#">Projetos</a>
-                    </li>
-                    <li class="link-item">
-                        <a href="#">Contato</a>
-                    </li>
-                </ul>
+    <header class="header-index">
+        <div class="container-navigation">
+            <nav class="navigation">
+                <div class="nav-padding">
+                    <div class="logotipo">
+                        <a href="index.html">
+                            <img src="./assets/img/logotipo.svg" alt="logotipo">
+                        </a>
+                    </div>
+                    <div class="nav-links">
+                        <ul class="ul-links">
+                            <li class="link-item selected" id="about">
+                                <a href="#">About</a>
+                            </li>
+                            <li class="link-item" id="skills">
+                                <a href="#">Skills</a>
+                            </li>
+                            <li class="link-item" id="projects">
+                                <a href="#">Projects</a>
+                            </li>
+                            <li class="link-item" id="contact">
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container-media">
+                <div class="media-links">
+                    <a href="#">
+                        <div class="media-item">
+                            <div class="media-item-img media-linkedin">
+                                <img src="./assets/img/media/vetor_linkedin.svg" alt="">
+                            </div>
+                            <div class="media-span">
+                                <span>Linkedin</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="media-item">
+                            <div class="media-item-img media-instagram">
+                                <img src="./assets/img/media/vetor_instagram.svg" alt="">
+                            </div>
+                            <div class="media-span">
+                                <span>Instagram</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="media-item">
+                            <div class="media-item-img media-twitter">
+                                <img src="./assets/img/media/vetor_X.svg" alt="">
+                            </div>
+                            <div class="media-span">
+                                <span>Twitter</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-    </nav>
-    <main class="container">
-        <section class="slide content-about">1</section>
-        <section class="slide content-skills">2</section>
-        <section class="slide content-projects">3</section>
-        <section class="slide content-contact">4</section>
+    </header>
+    <main class="main-index">
+        <div class="container">
+            <section class="slide content-about">1</section>
+            <section class="slide content-skills">2</section>
+            <section class="slide content-projects">3</section>
+            <section class="slide content-contact">4</section>
+        </div>
     </main>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/transitioning.js"></script>
 </body>
 
 </html>
