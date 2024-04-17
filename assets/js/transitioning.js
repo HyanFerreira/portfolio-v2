@@ -1,18 +1,19 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   const slider = document.querySelector('.container-slider');
   const about = document.querySelector('#about');
   const skills = document.querySelector('#skills');
   const projects = document.querySelector('#projects');
   const contact = document.querySelector('#contact');
+  const btnSeta = document.querySelector('.button-seta');
   const linkItems = document.querySelectorAll('.link-item');
 
   let isTransitioning = false;
   let slideHeight = 25;
   let currentSlideIndex = 0;
 
-  linkItems.forEach((item) => {
-    item.addEventListener('click', function () {
-      linkItems.forEach((item) => item.classList.remove('selected'));
+  linkItems.forEach(item => {
+    item.addEventListener('click', function() {
+      linkItems.forEach(item => item.classList.remove('selected'));
 
       this.classList.add('selected');
 
@@ -23,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  about.addEventListener('click', function () {
+  about.addEventListener('click', function() {
     if (currentSlideIndex === 1) {
       currentSlideIndex--;
     } else if (currentSlideIndex === 2) {
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  skills.addEventListener('click', function () {
+  skills.addEventListener('click', function() {
     if (currentSlideIndex === 0) {
       currentSlideIndex++;
     } else if (currentSlideIndex === 2) {
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  projects.addEventListener('click', function () {
+  projects.addEventListener('click', function() {
     if (currentSlideIndex === 0) {
       currentSlideIndex = +2;
     } else if (currentSlideIndex === 1) {
@@ -53,13 +54,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  contact.addEventListener('click', function () {
+  contact.addEventListener('click', function() {
     if (currentSlideIndex === 0) {
       currentSlideIndex += 3;
     } else if (currentSlideIndex === 1) {
       currentSlideIndex += 2;
     } else if (currentSlideIndex === 2) {
       currentSlideIndex++;
+    }
+  });
+
+  btnSeta.addEventListener('click', function() {
+    if (!isTransitioning && currentSlideIndex < slider.children.length - 1) {
+      isTransitioning = true;
+      currentSlideIndex++;
+      slider.style.transition = 'transform 900ms';
+      slider.style.transform = `translateY(-${slideHeight *
+        currentSlideIndex}%)`;
+      linkItems.forEach(item => item.classList.remove('selected'));
+      linkItems[currentSlideIndex].classList.add('selected');
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 900);
     }
   });
 
@@ -76,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var allowScrollEvent = true;
 
-  window.addEventListener('wheel', function (event) {
+  window.addEventListener('wheel', function(event) {
     if (allowScrollEvent) {
       allowScrollEvent = false;
 
@@ -88,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
           isTransitioning = true;
           currentSlideIndex++;
           slider.style.transition = 'transform 900ms';
-          slider.style.transform = `translateY(-${slideHeight * currentSlideIndex
-            }%)`;
+          slider.style.transform = `translateY(-${slideHeight *
+            currentSlideIndex}%)`;
           setTimeout(() => {
             isTransitioning = false;
           }, 900);
@@ -99,16 +115,16 @@ document.addEventListener('DOMContentLoaded', function () {
           isTransitioning = true;
           currentSlideIndex--;
           slider.style.transition = 'transform 900ms';
-          slider.style.transform = `translateY(-${slideHeight * currentSlideIndex
-            }%)`;
+          slider.style.transform = `translateY(-${slideHeight *
+            currentSlideIndex}%)`;
           setTimeout(() => {
             isTransitioning = false;
           }, 900);
         }
       }
-      linkItems.forEach((item) => item.classList.remove('selected'));
+      linkItems.forEach(item => item.classList.remove('selected'));
       linkItems[currentSlideIndex].classList.add('selected');
-      setTimeout(function () {
+      setTimeout(function() {
         allowScrollEvent = true;
       }, 1000);
     }
