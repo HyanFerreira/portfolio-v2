@@ -88,9 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
           isTransitioning = true;
           currentSlideIndex++;
           slider.style.transition = 'transform 900ms';
-          slider.style.transform = `translateY(-${
-            slideHeight * currentSlideIndex
-          }%)`;
+          slider.style.transform = `translateY(-${slideHeight * currentSlideIndex
+            }%)`;
           setTimeout(() => {
             isTransitioning = false;
           }, 900);
@@ -100,9 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
           isTransitioning = true;
           currentSlideIndex--;
           slider.style.transition = 'transform 900ms';
-          slider.style.transform = `translateY(-${
-            slideHeight * currentSlideIndex
-          }%)`;
+          slider.style.transform = `translateY(-${slideHeight * currentSlideIndex
+            }%)`;
           setTimeout(() => {
             isTransitioning = false;
           }, 900);

@@ -1,3 +1,11 @@
+:root {
+    --yellow: #f9dc64;
+    --orange: #FF553E;
+    --purple: #b5008E;
+    --blue: #3023AE;
+    --blue-alpha: #3023AE1f;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +32,6 @@ html {
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -34,6 +41,7 @@ html {
     height: 100%;
     display: flex;
     justify-content: center;
+    max-height: 1300px;
 }
 
 /* Navegação */
@@ -47,6 +55,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border-bottom: 1px solid #0db75f; */
 }
 
 .logotipo {
@@ -79,7 +88,7 @@ html {
 .link-item a {
     color: #0db75f;
     transition: 0.3s ease-in-out;
-    padding: 6px 10px;
+    padding: 8px 15px;
     border-radius: 5px;
 }
 
@@ -98,9 +107,8 @@ html {
 .container-media {
     position: absolute;
     z-index: 99;
-    top: 50%;
-    left: 5%;
-    transform: translate(0, -50%);
+    left: 2%;
+    bottom: 3%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,7 +177,7 @@ html {
 
 .media-item:hover .media-instagram {
     /* content: url(../img/media/vetor_instagram_dark.svg); */
-    background-color: #d62038;
+    background-image: radial-gradient(circle at bottom left, var(--yellow), var(--orange), var(--purple));
 }
 
 .media-item:hover .media-linkedin {
@@ -215,12 +223,18 @@ html {
     width: 100%;
     height: 100vh;
     transition: transform 0.5s ease;
-    padding: 100px 10%;
+}
+
+.slide-limit {
+    max-height: 1300px;
+    padding: 100px 14%;
 }
 
 .container-about {
     width: 100%;
+    height: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -234,6 +248,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    max-width: 450px;
 }
 
 .we500 {
