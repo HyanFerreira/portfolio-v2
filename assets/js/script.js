@@ -69,39 +69,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Verifica se há erro em cada campo e atualiza a variável hasError
     if (name === '') {
-      showError(errorName, 'Preencha este campo');
+      showError(errorName, 'Preencha este campo.');
       hasError = true;
     } else {
       validateName();
     }
 
     if (email === '') {
-      showError(errorEmail, 'Preencha este campo');
+      showError(errorEmail, 'Preencha este campo.');
       hasError = true;
     } else {
       validateEmail();
     }
 
     if (message === '') {
-      showError(errorMessage, 'Preencha este campo');
+      showError(errorMessage, 'Preencha este campo.');
       hasError = true;
     } else {
       validateMessage();
     }
 
-    // Verifica se todos os campos foram preenchidos corretamente
     if (name !== '' && email !== '' && message !== '') {
-      // Se não houver erro em nenhum campo, limpa o erro no errorSubmit
-      if (!hasError) {
+      clearError(errorSubmit);
+      if (hasError) {
         clearError(errorSubmit);
-        // Aqui você pode fazer algo com os dados do formulário, como enviar via AJAX ou fazer outra operação
       } else {
-        // Se houver erro em algum campo, exibe mensagem de erro no errorSubmit
-        showError(errorSubmit, 'Por favor, corrija os erros no formulário');
+        showError(errorSubmit, 'Por favor, corrija os erros no formulário.');
       }
     } else {
-      // Se algum campo estiver vazio, exibe mensagem de erro no errorSubmit
-      showError(errorSubmit, 'Por favor, preencha todos os campos');
+      showError(errorSubmit, 'Por favor, preencha todos os campos.');
     }
   }
 
