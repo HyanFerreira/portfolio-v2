@@ -7,6 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
   let carouselItem = 200;
   let carouselItemGap = 30;
 
+  function updateCardWidth() {
+    if (window.innerWidth > 2300) {
+      carouselItem = 300;
+    } else {
+      carouselItem = 200;
+    }
+  }
+
+  window.addEventListener('resize', updateCardWidth);
+  updateCardWidth();
+
   nextBtn.addEventListener('click', () => {
     if (!isTransitioning) {
       isTransitioning = true;
