@@ -250,7 +250,8 @@
                                             </div>
                                         </div>
                                         <div class="model-project">
-                                            <img src="./assets/img/projects/movieuniverse2023-netlify-app.png" alt="project">
+                                            <img src="./assets/img/projects/movieuniverse2023-netlify-app.png"
+                                                alt="project">
                                             <div class="access-text">
                                                 <span>Access Website</span>
                                             </div>
@@ -277,13 +278,59 @@
                     </div>
                 </section>
                 <section class="slide">
-                    <div class="container-contact slide-limit">4</div>
+                    <div class="container-contact slide-limit">
+                        <div class="content-contact">
+                            <div class="contact-desc">
+                                <span class="span-green">Contact</span>
+                                <h1>Send<span class="span-green"> me </span> a <span class="span-green">message</span>
+                                </h1>
+                                <span>Feel free to contact me and let's bring your projects <br> to life together,
+                                    making each pixel
+                                    an opportunity <br> for innovation and success.</span>
+                                <div class="contact-email">
+                                    <img src="./assets/img/contact/email.svg" alt="email">
+                                    <span>hyanferreira.dev@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="container-contact-form">
+                                <form class="contact-form" action="#">
+                                    <h1>Contact Me</h1>
+                                    <div class="area-input">
+                                        <div class="input-label">
+                                            <input type="text" id="name" required>
+                                            <label for="name">Name</label>
+                                        </div>
+                                        <div class="error" id="errorName"></div>
+                                    </div>
+                                    <div class="area-input">
+                                        <div class="input-label">
+                                            <input type="text" id="email" required>
+                                            <label for="email">Email</label>
+                                        </div>
+                                        <div class="error" id="errorEmail"></div>
+                                    </div>
+                                    <div class="area-input">
+                                        <div class="input-label">
+                                            <textarea name="message" id="message" required></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                        <div class="error" id="errorMessage"></div>
+                                    </div>
+                                    <div class="area-button-contact">
+                                        <button class="btn btn-submit-contact">Submit</button>
+                                        <div class="error" id="errorSubmit"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
     </main>
     <script src="./assets/js/transitioning.js"></script>
     <script src="./assets/js/cacrousel_projects.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
