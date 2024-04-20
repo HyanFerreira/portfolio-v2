@@ -293,26 +293,27 @@
                                 </div>
                             </div>
                             <div class="container-contact-form">
-                                <form class="contact-form" action="https://formsubmit.co/hyanferreira.dev@email.com" method="POST">
+                                <form class="contact-form" action="https://formsubmit.co/hyanferreira.dev@email.com"
+                                    method="POST">
                                     <h1>Contact Me</h1>
                                     <div class="area-input">
                                         <div class="input-label">
                                             <input type="text" id="name" required>
-                                            <label for="name">Name</label>
+                                            <label id="nameLabel" for="name">Name</label>
                                         </div>
                                         <div class="error" id="errorName"></div>
                                     </div>
                                     <div class="area-input">
                                         <div class="input-label">
                                             <input type="text" id="email" required>
-                                            <label for="email">Email</label>
+                                            <label id="emailLabel" for="email">Email</label>
                                         </div>
                                         <div class="error" id="errorEmail"></div>
                                     </div>
                                     <div class="area-input">
                                         <div class="input-label">
                                             <textarea name="message" id="message" required></textarea>
-                                            <label for="message">Message</label>
+                                            <label id="messageLabel" for="message">Message</label>
                                         </div>
                                         <div class="error" id="errorMessage"></div>
                                     </div>
@@ -328,6 +329,7 @@
             </div>
         </div>
     </main>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./assets/js/transitioning.js"></script>
     <script src="./assets/js/cacrousel_projects.js"></script>
     <script src="./assets/js/script.js"></script>

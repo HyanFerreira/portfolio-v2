@@ -742,6 +742,17 @@ h1 {
     color: #FFFFFF;
 }
 
+#name.error,
+#email.error,
+#message.error {
+    border-color: red;
+}
+
+#nameLabel.error,
+#emailLabel.error,
+#messageLabel.error {
+    color: red;
+}
 
 /* Responsive Styles */
 @media (min-width: 2600px) {

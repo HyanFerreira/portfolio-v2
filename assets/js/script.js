@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   const nameInput = document.getElementById('name');
+  const nameLabel = document.getElementById('nameLabel');
+
   const emailInput = document.getElementById('email');
+  const emailLabel = document.getElementById('emailLabel');
+
   const messageInput = document.getElementById('message');
+  const messageLabel = document.getElementById('messageLabel');
 
   const submitButton = document.querySelector('.btn-submit-contact');
   const errorSubmit = document.getElementById('errorSubmit');
@@ -24,13 +29,21 @@ document.addEventListener('DOMContentLoaded', function() {
   function validateName() {
     const name = nameInput.value.trim();
     if (name === '') {
-      showError(errorName, 'Preencha este campo.');
+      showError(errorName, 'Fill in this field.');
+      nameLabel.classList.add('error');
+      nameInput.classList.add('error');
     } else if (name.length < 3) {
-      showError(errorName, 'Nome deve conter no mínimo 3 caracteres.');
+      showError(errorName, 'Name must contain at least 3 characters.');
+      nameLabel.classList.add('error');
+      nameInput.classList.add('error');
     } else if (!/^[a-zA-Z\s]+$/.test(name)) {
-      showError(errorName, 'Não utilize números e/ou caracteres especiais.');
+      showError(errorName, 'Do not use numbers and/or special characters.');
+      nameLabel.classList.add('error');
+      nameInput.classList.add('error');
     } else {
       clearError(errorName);
+      nameLabel.classList.remove('error');
+      nameInput.classList.remove('error');
     }
   }
 
@@ -38,11 +51,17 @@ document.addEventListener('DOMContentLoaded', function() {
   function validateEmail() {
     const email = emailInput.value.trim();
     if (email === '') {
-      showError(errorEmail, 'Preencha este campo.');
+      showError(errorEmail, 'Fill in this field.');
+      emailLabel.classList.add('error');
+      emailInput.classList.add('error');
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      showError(errorEmail, 'Insira um email válido.');
+      showError(errorEmail, 'Enter a valid email.');
+      emailLabel.classList.add('error');
+      emailInput.classList.add('error');
     } else {
       clearError(errorEmail);
+      emailLabel.classList.remove('error');
+      emailInput.classList.remove('error');
     }
   }
 
@@ -50,11 +69,17 @@ document.addEventListener('DOMContentLoaded', function() {
   function validateMessage() {
     const message = messageInput.value.trim();
     if (message === '') {
-      showError(errorMessage, 'Preencha este campo.');
+      showError(errorMessage, 'Fill in this field.');
+      messageLabel.classList.add('error');
+      messageInput.classList.add('error');
     } else if (message.length < 5) {
-      showError(errorMessage, 'Mensagem deve conter no mínimo 5 caracteres.');
+      showError(errorMessage, 'Message must contain at least 5 characters.');
+      messageLabel.classList.add('error');
+      messageInput.classList.add('error');
     } else {
       clearError(errorMessage);
+      messageLabel.classList.remove('error');
+      messageInput.classList.remove('error');
     }
   }
 
@@ -81,12 +106,22 @@ document.addEventListener('DOMContentLoaded', function() {
     ) {
       clearError(errorSubmit);
       // Aqui você pode fazer qualquer coisa quando o formulário estiver pronto para enviar
-      console.log('O formulário está pronto para enviar!');
+      Email.send({
+        Host: 'smtp.elasticemail.com',
+        Username: 'hyanferreira.dev@gmail.com',
+        Password: '3FA1A39B4D2AAF617720191EE33BBF6D5C61',
+        To: 'hcgamesmg2020@gmail.com',
+        From: 'hyanferreira.dev@gmail.com',
+        Subject: `${name} te enviou uma mensagem!`,
+        Body: `Nome: ${name} <br> <br> Email: ${email} <br> <br> Mensagem: ${message}`,
+      }).then(() => {
+        alert('Mensagem enviada!');
+        nameInput.value = '';
+        emailInput.value = '';
+        messageInput.value = '';
+      });
     } else {
-      showError(
-        errorSubmit,
-        'Por favor, preencha todos os campos corretamente.',
-      );
+      showError(errorSubmit, 'Please fill in all fields correctly.');
     }
   }
 
