@@ -65,39 +65,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const email = emailInput.value.trim();
     const message = messageInput.value.trim();
 
-    let hasError = false; // Variável para controlar se há erros
+    // Verifica se há erro em cada campo
+    validateName();
+    validateEmail();
+    validateMessage();
 
-    // Verifica se há erro em cada campo e atualiza a variável hasError
-    if (name === '') {
-      showError(errorName, 'Preencha este campo.');
-      hasError = true;
-    } else {
-      validateName();
-    }
-
-    if (email === '') {
-      showError(errorEmail, 'Preencha este campo.');
-      hasError = true;
-    } else {
-      validateEmail();
-    }
-
-    if (message === '') {
-      showError(errorMessage, 'Preencha este campo.');
-      hasError = true;
-    } else {
-      validateMessage();
-    }
-
-    if (name !== '' && email !== '' && message !== '') {
+    // Verifica se todos os campos estão preenchidos e sem erros
+    if (
+      name !== '' &&
+      email !== '' &&
+      message !== '' &&
+      errorName.textContent === '' &&
+      errorEmail.textContent === '' &&
+      errorMessage.textContent === ''
+    ) {
       clearError(errorSubmit);
-      if (hasError) {
-        clearError(errorSubmit);
-      } else {
-        showError(errorSubmit, 'Por favor, corrija os erros no formulário.');
-      }
+      // Aqui você pode fazer qualquer coisa quando o formulário estiver pronto para enviar
+      console.log('O formulário está pronto para enviar!');
     } else {
-      showError(errorSubmit, 'Por favor, preencha todos os campos.');
+      showError(
+        errorSubmit,
+        'Por favor, preencha todos os campos corretamente.',
+      );
     }
   }
 
