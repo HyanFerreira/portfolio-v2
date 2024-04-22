@@ -88,16 +88,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const thanksDesc = document.querySelector('.thanks-desc');
     const containerLoading = document.querySelector('.container-loading');
     const btnClose = document.getElementById('btnClose');
+    const thanks = document.querySelector('.thanks');
 
     modalLoading.classList.add('active');
-    containerLoading.classList.add('active');
+    setTimeout(function() {
+      thanks.classList.add('active');
+      containerLoading.classList.add('active');
+    }, 100);
     setTimeout(function() {
       containerLoading.classList.remove('active');
+      containerLoading.classList.add('disable');
       thanksDesc.classList.add('active');
-    }, 3000);
+    }, 3200);
 
     btnClose.addEventListener('click', function() {
       modalLoading.classList.remove('active');
+      thanksDesc.classList.remove('active');
+      containerLoading.classList.remove('disable');
+      thanks.classList.remove('active');
     });
   }
 
@@ -137,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
         emailInput.value = '';
         messageInput.value = '';
       });
-      
+
       loading();
     } else {
       showError(errorSubmit, 'Please fill in all fields correctly.');

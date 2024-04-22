@@ -288,39 +288,43 @@
                                     making each pixel
                                     an opportunity <br> for innovation and success.</span>
                                 <div class="contact-email">
-                                    <img src="./assets/img/contact/email.svg" alt="email">
+                                    <img src="./assets/img/contact/email-green.svg" alt="email">
                                     <span>hyanferreira.dev@gmail.com</span>
                                 </div>
                             </div>
                             <div class="container-contact-form">
                                 <form class="contact-form" action="https://formsubmit.co/hyanferreira.dev@email.com"
                                     method="POST">
-                                    <h1>Contact Me</h1>
-                                    <div class="area-input">
-                                        <div class="input-label">
-                                            <input type="text" id="name" required>
-                                            <label id="nameLabel" for="name">Name</label>
+                                    <fieldset>
+                                        <legend>
+                                            <h1>Contact Me</h1>
+                                        </legend>
+                                        <div class="area-input">
+                                            <div class="input-label">
+                                                <input type="text" id="name" required>
+                                                <label id="nameLabel" for="name">Name</label>
+                                            </div>
+                                            <div class="error" id="errorName"></div>
                                         </div>
-                                        <div class="error" id="errorName"></div>
-                                    </div>
-                                    <div class="area-input">
-                                        <div class="input-label">
-                                            <input type="text" id="email" required>
-                                            <label id="emailLabel" for="email">Email</label>
+                                        <div class="area-input">
+                                            <div class="input-label">
+                                                <input type="text" id="email" required>
+                                                <label id="emailLabel" for="email">Email</label>
+                                            </div>
+                                            <div class="error" id="errorEmail"></div>
                                         </div>
-                                        <div class="error" id="errorEmail"></div>
-                                    </div>
-                                    <div class="area-input">
-                                        <div class="input-label">
-                                            <textarea name="message" id="message" required></textarea>
-                                            <label id="messageLabel" for="message">Message</label>
+                                        <div class="area-input">
+                                            <div class="input-label">
+                                                <textarea name="message" id="message" required></textarea>
+                                                <label id="messageLabel" for="message">Message</label>
+                                            </div>
+                                            <div class="error" id="errorMessage"></div>
                                         </div>
-                                        <div class="error" id="errorMessage"></div>
-                                    </div>
-                                    <div class="area-button-contact">
-                                        <button class="btn btn-submit-contact">Submit</button>
-                                        <div class="error" id="errorSubmit"></div>
-                                    </div>
+                                        <div class="area-button-contact">
+                                            <button class="btn btn-submit-contact">Submit</button>
+                                            <div class="error" id="errorSubmit"></div>
+                                        </div>
+                                    </fieldset>
                                 </form>
                             </div>
                         </div>
@@ -332,11 +336,6 @@
     <div class="modal-contact-thanks">
         <div class="content-thanks">
             <div class="thanks">
-                <div class="thanks-desc">
-                    <h1><span class="span-green">Message</span> sent <span class="span-green">successfully</span>!</h1>
-                    <span>Thank you for contacting us. I will return soon.</span>
-                    <button class="btn" id="btnClose">Close</button>
-                </div>
                 <div class="container-loading">
                     <div class="text-loading">
                         <h1>Sending...</h1>
@@ -346,6 +345,11 @@
                             <div class="line-loading"></div>
                         </div>
                     </div>
+                </div>
+                <div class="thanks-desc">
+                    <h1><span class="span-green">Message</span> sent <span class="span-green">successfully</span>!</h1>
+                    <span>Thank you for contacting us. I will return soon.</span>
+                    <button class="btn" id="btnClose">Close</button>
                 </div>
             </div>
         </div>
