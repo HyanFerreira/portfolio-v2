@@ -610,7 +610,8 @@ h1 {
 }
 
 .prevBtnCarousel:hover,
-.nextBtnCarousel:hover {
+.nextBtnCarousel:hover,
+.thanks button:hover {
     background-color: #0db75fdc;
     color: #FFFFFF;
 }
@@ -754,6 +755,102 @@ h1 {
     color: red;
 }
 
+/* Modal Contact */
+.modal-contact-thanks {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999999;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal-contact-thanks.active {
+    display: block;
+}
+
+.content-thanks {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thanks {
+    width: 600px;
+    height: 250px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.thanks-desc {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.thanks-desc.active {
+    display: flex;
+}
+
+.container-loading {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-loading.active {
+    display: flex;
+}
+
+.text-loading h1 {
+    color: #0DB75F;
+    margin-bottom: 25px;
+}
+
+.loading {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-box {
+    padding: 2px;
+    width: 40%;
+    height: 20px;
+    border: 2px solid #0DB75F;
+    border-radius: 15px;
+}
+
+.line-loading {
+    height: 100%;
+    border-radius: 15px;
+    background-color: #0DB75F;
+    animation: loading 3s forwards cubic-bezier(0, 0, 0, 0);
+}
+
+@keyframes loading {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
 /* Responsive Styles */
 @media (min-width: 2600px) {
 
@@ -784,7 +881,9 @@ h1 {
     .link-item a,
     .card-item span,
     .text-skill span,
-    .project-desc span {
+    .project-desc span,
+    .contact-desc span,
+    .input-label label {
         font-size: 1.3rem;
     }
 
@@ -795,7 +894,9 @@ h1 {
     .container-skills h1,
     .container-skills h1 span,
     .project-desc h1,
-    .project-desc h1 span {
+    .project-desc h1 span,
+    .content-contact h1,
+    .container-contact h1 span {
         font-size: 2.5rem;
     }
 
@@ -874,6 +975,22 @@ h1 {
 
     .access-text span {
         font-size: 1.8rem;
+    }
+
+    .contact-email img {
+        width: 30px;
+    }
+
+    .contact-form {
+        width: 450px;
+    }
+
+    .error {
+        font-size: 1.1rem;
+    }
+
+    .btn-submit-contact {
+        width: 100%;
     }
 }
 

@@ -83,6 +83,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  function loading() {
+    const modalLoading = document.querySelector('.modal-contact-thanks');
+    const thanksDesc = document.querySelector('.thanks-desc');
+    const containerLoading = document.querySelector('.container-loading');
+    const btnClose = document.getElementById('btnClose');
+
+    modalLoading.classList.add('active');
+    containerLoading.classList.add('active');
+    setTimeout(function() {
+      containerLoading.classList.remove('active');
+      thanksDesc.classList.add('active');
+    }, 3000);
+
+    btnClose.addEventListener('click', function() {
+      modalLoading.classList.remove('active');
+    });
+  }
+
   // Função para validar o formulário ao ser submetido
   function validateForm(event) {
     event.preventDefault(); // Impede o envio do formulário padrão
@@ -115,11 +133,12 @@ document.addEventListener('DOMContentLoaded', function() {
         Subject: `${name} te enviou uma mensagem!`,
         Body: `Nome: ${name} <br> <br> Email: ${email} <br> <br> Mensagem: ${message}`,
       }).then(() => {
-        alert('Mensagem enviada!');
         nameInput.value = '';
         emailInput.value = '';
         messageInput.value = '';
       });
+      
+      loading();
     } else {
       showError(errorSubmit, 'Please fill in all fields correctly.');
     }
