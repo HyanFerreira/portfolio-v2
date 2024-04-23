@@ -208,8 +208,9 @@ h1 {
     bottom: 0;
     width: 100%;
     height: auto;
-    background-color: #726a6a;
-    z-index: 9999999;
+    background-color: #0DB75F;
+    z-index: 999999;
+    display: none;
 }
 
 .nav-links-mobile {
@@ -223,7 +224,7 @@ h1 {
 
 .ul-links-mobile {
     display: flex;
-    width: 350px;
+    width: auto;
 }
 
 .link-item-mobile {
@@ -241,16 +242,17 @@ h1 {
     width: 100%;
     text-align: center;
     font-weight: 500;
-    color: #0DB75F;
+    color: #FFFFFF;
 }
 
 .icon {
     position: relative;
     display: block;
-    line-height: 75px;
+    line-height: 70px;
     font-size: 1.5em;
     text-align: center;
     transition: 0.5s;
+    z-index: 9;
 }
 
 .link-item-mobile.active a .icon {
@@ -259,7 +261,8 @@ h1 {
 
 .link-item-mobile a .text {
     position: absolute;
-    font-size: 0.75em;
+    padding-top: 5px;
+    font-size: 0.90em;
     letter-spacing: 0.05em;
     transition: 0.5s;
     opacity: 0;
@@ -336,7 +339,7 @@ h1 {
 
 .button-seta {
     position: absolute;
-    z-index: 999999999;
+    z-index: 99999;
     width: 42px;
     height: 42px;
     background-color: #0db75f;
@@ -1230,5 +1233,9 @@ h1 {
 @media (max-width: 750px) {
     .button-seta {
         display: none;
+    }
+
+    .navigation-mobile {
+        display: flex;
     }
 }
