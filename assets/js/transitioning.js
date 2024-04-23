@@ -33,13 +33,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  window.addEventListener('wheel', function(event) {
+  function scrolling(event) {
     if (event.deltaY > 0 && currentSlideIndex < slider.children.length - 1) {
       updateSlider(currentSlideIndex + 1);
     } else if (event.deltaY < 0 && currentSlideIndex > 0) {
       updateSlider(currentSlideIndex - 1);
     }
-  });
+  }
+
+  function enableScrolling() {
+    if (window.innerWidth >= 1300) {
+      window.addEventListener('wheel', scrolling);
+    } else {
+      window.removeEventListener('wheel', scrolling);
+    }
+  }
+
+  enableScrolling();
+
+  window.addEventListener('resize', enableScrolling);
 
   document.addEventListener('keydown', function(event) {
     if (
