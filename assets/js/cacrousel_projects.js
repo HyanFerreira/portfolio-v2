@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', updateCardWidth);
   updateCardWidth();
 
-  nextBtn.addEventListener('click', () => {
+  function transitionNext() {
     if (!isTransitioning) {
       isTransitioning = true;
       slider.style.transition = 'transform 900ms';
@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
         isTransitioning = false;
       }, 900);
     }
-  });
+  }
 
-  prevBtn.addEventListener('click', () => {
+  function transitionPrev() {
     if (!isTransitioning) {
       isTransitioning = true;
       slider.insertBefore(slider.lastElementChild, slider.firstElementChild);
@@ -45,6 +45,22 @@ document.addEventListener('DOMContentLoaded', function() {
         slider.style.transform = 'translate(0)';
         isTransitioning = false;
       }, 0);
+    }
+  }
+
+  nextBtn.addEventListener('click', () => {
+    transitionNext();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    transitionPrev();
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+      transitionNext();
+    } else if (event.key === 'ArrowRight') {
+      transitionPrev();
     }
   });
 
