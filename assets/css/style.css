@@ -202,6 +202,87 @@ h1 {
     font-weight: 500;
 }
 
+/* Menu Mobile */
+.navigation-mobile {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: #726a6a;
+    z-index: 9999999;
+}
+
+.nav-links-mobile {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ul-links-mobile {
+    display: flex;
+    width: 350px;
+}
+
+.link-item-mobile {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+.link-item-mobile a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    color: #0DB75F;
+}
+
+.icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.link-item-mobile.active a .icon {
+    transform: translateY(-35px);
+}
+
+.link-item-mobile a .text {
+    position: absolute;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.link-item-mobile.active a .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.indicator {
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background-color: #0DB75F;
+    border-radius: 50%;
+    border: 6px solid #FFFFFF;
+    transition: 0.5s;
+}
+
+
 /* Conteúdo principal */
 .main-index {
     position: absolute;
@@ -1147,5 +1228,7 @@ h1 {
 }
 
 @media (max-width: 750px) {
-
+    .button-seta {
+        display: none;
+    }
 }
