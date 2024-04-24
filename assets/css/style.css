@@ -1329,9 +1329,9 @@ h1 {
         display: none;
     }
 
-    .container-projects {
+    /* .container-projects {
         justify-content: center;
-    }
+    } */
 
     .content-contact {
         flex-wrap: wrap;
