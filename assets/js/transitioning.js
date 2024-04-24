@@ -7,6 +7,19 @@ document.addEventListener('DOMContentLoaded', function() {
   let slideHeight = 25;
   let currentSlideIndex = 0;
 
+  const linkItemsMobile = document.querySelectorAll('.link-item-mobile');
+
+  function activeLink() {
+    linkItemsMobile.forEach(item => {
+      item.classList.remove('active');
+      this.classList.add('active');
+    });
+  }
+
+  linkItemsMobile.forEach(item => {
+    item.addEventListener('click', activeLink);
+  });
+
   function updateSlider(index) {
     if (!isTransitioning) {
       isTransitioning = true;
@@ -15,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
       slider.style.transform = `translateY(-${slideHeight * index}%)`;
       linkItems.forEach(item => item.classList.remove('selected'));
       linkItems[index].classList.add('selected');
+      linkItemsMobile.forEach(item => item.classList.remove('active'));
+      linkItemsMobile[index].classList.add('active');
       setTimeout(() => {
         isTransitioning = false;
       }, 900);
@@ -22,6 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   linkItems.forEach((item, index) => {
+    item.addEventListener('click', function() {
+      updateSlider(index);
+    });
+  });
+
+  linkItemsMobile.forEach((item, index) => {
     item.addEventListener('click', function() {
       updateSlider(index);
     });

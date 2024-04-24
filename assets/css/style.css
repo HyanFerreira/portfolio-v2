@@ -69,6 +69,10 @@ h1 {
     cursor: pointer;
 }
 
+.logotipo.mobile {
+    display: none;
+}
+
 /* .logotipo img {
     width: 48px;
     height: 48px;
@@ -208,9 +212,10 @@ h1 {
     bottom: 0;
     width: 100%;
     height: auto;
-    background-color: #0DB75F;
+    background-color: #FFFFFF;
     z-index: 999999;
     display: none;
+    padding-top: 34px;
 }
 
 .nav-links-mobile {
@@ -220,6 +225,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #0DB75F;
 }
 
 .ul-links-mobile {
@@ -247,8 +253,10 @@ h1 {
 
 .icon {
     position: relative;
-    display: block;
-    line-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
     font-size: 1.5em;
     text-align: center;
     transition: 0.5s;
@@ -283,6 +291,46 @@ h1 {
     border-radius: 50%;
     border: 6px solid #FFFFFF;
     transition: 0.5s;
+}
+
+.indicator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 #FFFFFF;
+}
+
+.indicator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 #FFFFFF;
+}
+
+.link-item-mobile:nth-child(1).active~.indicator {
+    transform: translateX(calc(70px * 0));
+}
+
+.link-item-mobile:nth-child(2).active~.indicator {
+    transform: translateX(calc(70px * 1));
+}
+
+.link-item-mobile:nth-child(3).active~.indicator {
+    transform: translateX(calc(70px * 2));
+}
+
+.link-item-mobile:nth-child(4).active~.indicator {
+    transform: translateX(calc(70px * 3));
 }
 
 
@@ -1237,5 +1285,62 @@ h1 {
 
     .navigation-mobile {
         display: flex;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .slide-limit {
+        padding: 4% 6% 110px 6%;
+    }
+
+    .content-about,
+    .content-photo,
+    .container-skills h1,
+    .content-contact,
+    .project-desc {
+        padding-top: 0px;
+    }
+
+    .logotipo.mobile {
+        display: block;
+    }
+
+    .about-photo {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .content-photo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content-carousel-limit {
+        width: 340px;
+    }
+
+    .line-hor {
+        display: none;
+    }
+
+    .container-projects {
+        justify-content: center;
+    }
+
+    .content-contact {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .container-contact-form {
+        padding-left: 0;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 100%;
     }
 }
