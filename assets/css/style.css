@@ -209,13 +209,13 @@ h1 {
 /* Menu Mobile */
 .navigation-mobile {
     position: absolute;
-    bottom: 0;
+    top: 0;
     width: 100%;
     height: auto;
     background-color: #FFFFFF;
     z-index: 999999;
     display: none;
-    padding-top: 34px;
+    padding-bottom: 34px;
 }
 
 .nav-links-mobile {
@@ -264,27 +264,27 @@ h1 {
 }
 
 .link-item-mobile.active a .icon {
-    transform: translateY(-35px);
+    transform: translateY(35px);
 }
 
 .link-item-mobile a .text {
     position: absolute;
-    padding-top: 5px;
+    padding-bottom: 8px;
     font-size: 0.90em;
     letter-spacing: 0.05em;
     transition: 0.5s;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-20px);
 }
 
 .link-item-mobile.active a .text {
     opacity: 1;
-    transform: translateY(10px);
+    transform: translateY(-10px);
 }
 
 .indicator {
     position: absolute;
-    top: -50%;
+    bottom: -50%;
     width: 70px;
     height: 70px;
     background-color: #0DB75F;
@@ -296,25 +296,27 @@ h1 {
 .indicator::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: -22px;
+    bottom: 50%;
+    right: -22px;
     width: 20px;
     height: 20px;
     background-color: transparent;
     border-top-right-radius: 20px;
-    box-shadow: 0px -10px 0 0 #FFFFFF;
+    box-shadow: 0px -10px 0 0 #ffffff;
+    transform: rotate(180deg);
 }
 
 .indicator::after {
     content: "";
     position: absolute;
-    top: 50%;
-    right: -22px;
+    bottom: 50%;
+    left: -22px;
     width: 20px;
     height: 20px;
     background-color: transparent;
     border-top-left-radius: 20px;
-    box-shadow: 0px -10px 0 0 #FFFFFF;
+    box-shadow: 0px -10px 0 0 #ffffff;
+    transform: rotate(180deg);
 }
 
 .link-item-mobile:nth-child(1).active~.indicator {
@@ -1292,7 +1294,7 @@ h1 {
     }
 
     .slide-limit {
-        padding: 4% 6% 110px 6%;
+        padding: 110px 6% 6% 6%;
     }
 
     .content-about,
