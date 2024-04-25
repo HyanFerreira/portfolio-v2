@@ -368,6 +368,7 @@ h1 {
 .slide-limit {
     max-height: 1300px;
     padding: 100px 14%;
+    overflow-y: scroll;
 }
 
 /* About Section */
@@ -1248,7 +1249,7 @@ h1 {
 
     .slide-limit {
         padding: 100px 6%;
-        overflow: auto;
+        /* overflow: auto; */
     }
 
     .model-project {
