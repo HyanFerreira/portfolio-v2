@@ -542,6 +542,72 @@ h1 {
     text-align: justify;
 }
 
+.scroll {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scrolldown {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%) rotate(225deg);
+}
+
+.scrolldown span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #0DB75F;
+    border-right: 2px solid #0DB75F;
+    opacity: 0;
+    animation: animate 1.5s linear infinite;
+}
+
+.scrolldown span:nth-child(1) {
+    transform: translate(-15px, -15px);
+    animation-delay: -0.4s;
+}
+
+.scrolldown span:nth-child(2) {
+    transform: translate(-0, -0);
+    animation-delay: -0.2s;
+}
+
+.scrolldown span:nth-child(3) {
+    transform: translate(15px, 15px);
+    animation-delay: 0s;
+}
+
+@keyframes animate {
+    0% {
+        top: -5px;
+        left: -5px;
+        opacity: 0;
+    }
+
+    25% {
+        top: 0px;
+        left: 0px;
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        top: 5px;
+        left: 5px;
+        opacity: 0;
+    }
+}
+
 /* Skills Section */
 .container-skills {
     width: 100%;
@@ -1296,7 +1362,7 @@ h1 {
     }
 
     .slide-limit {
-        padding: 110px 6% 6% 6%;
+        padding: 120px 6% 15% 6%;
     }
 
     .content-about,
