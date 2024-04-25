@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorEmail = document.getElementById('errorEmail');
   const errorMessage = document.getElementById('errorMessage');
 
-  document.body.addEventListener(
-    'touchmove',
-    function(event) {
-      event.preventDefault();
-    },
-    { passive: false },
-  );
+  // document.addEventListener(
+  //   'touchmove',
+  //   function(event) {
+  //     event.preventDefault();
+  //   },
+  //   { passive: false },
+  // );
 
   // Função para exibir mensagem de erro em um elemento
   function showError(element, message) {
