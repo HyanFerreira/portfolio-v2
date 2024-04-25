@@ -548,7 +548,6 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
 }
 
 .scrolldown {
@@ -1364,6 +1363,10 @@ h1 {
 
     .slide-limit {
         padding: 120px 6% 15% 6%;
+    }
+
+    .container-about.slide-limit {
+        margin-bottom: 60px;
     }
 
     .content-about,
