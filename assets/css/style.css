@@ -23,6 +23,10 @@ html {
     overflow: hidden;
 }
 
+body {
+    overscroll-behavior-y: contain;
+}
+
 .container-slider,
 .container-navigation,
 .container-main {
