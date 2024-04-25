@@ -15,28 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorEmail = document.getElementById('errorEmail');
   const errorMessage = document.getElementById('errorMessage');
 
-  // document.addEventListener(
-  //   'touchmove',
-  //   function(event) {
-  //     event.preventDefault();
-  //   },
-  //   { passive: false },
-  // );
-
-  var startY;
-document.addEventListener('touchstart', function(e) {
-    startY = e.touches[0].clientY;
-});
-
-document.addEventListener('touchmove', function(e) {
-    var deltaY = e.touches[0].clientY - startY;
-    // Se o usuário estiver rolando para baixo e não houver overflow na parte superior da página
-    if (deltaY > 0 && window.scrollY === 0) {
-        e.preventDefault(); // Impede a ação padrão de atualização
-    }
-});
-
-
   // Função para exibir mensagem de erro em um elemento
   function showError(element, message) {
     element.textContent = message;
