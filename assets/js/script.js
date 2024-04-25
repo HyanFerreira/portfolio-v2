@@ -15,25 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorEmail = document.getElementById('errorEmail');
   const errorMessage = document.getElementById('errorMessage');
 
-  $(document).ready(function() {
-    $('body')
-      .on('touchstart', function(e) {
-        if (e.originalEvent.touches.length > 1) {
-          return;
-        }
-        var startY = e.originalEvent.touches[0].clientY;
-        $(this).on('touchmove', function(e) {
-          var currentY = e.originalEvent.touches[0].clientY;
-          if (currentY > startY) {
-            e.preventDefault();
-          }
-        });
-      })
-      .on('touchend', function() {
-        $(this).off('touchmove');
-      });
-  });
-
   // Função para exibir mensagem de erro em um elemento
   function showError(element, message) {
     element.textContent = message;

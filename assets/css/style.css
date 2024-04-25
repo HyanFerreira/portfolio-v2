@@ -21,7 +21,7 @@
 body,
 html {
     overflow: hidden;
-    overscroll-behavior-y: contain!important;
+    overscroll-behavior-y: contain !important;
 }
 
 body {
@@ -547,9 +547,17 @@ h1 {
     text-align: justify;
 }
 
+.scroll-mobile {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-shrink: 0;
+}
+
 .scroll {
     position: relative;
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -557,11 +565,11 @@ h1 {
 
 .scrolldown {
     position: absolute;
-    bottom: -80px;
+    top: 100%;
     left: 50%;
     width: 40px;
     height: 40px;
-    transform: translate(-50%) rotate(225deg);
+    transform: translate(-50%, -50%) rotate(225deg);
 }
 
 .scrolldown span {
@@ -1368,10 +1376,6 @@ h1 {
 
     .slide-limit {
         padding: 120px 6% 15% 6%;
-    }
-
-    .container-about.slide-limit {
-        margin-bottom: 60px;
     }
 
     .content-about,
