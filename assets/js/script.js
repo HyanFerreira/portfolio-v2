@@ -15,6 +15,22 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorEmail = document.getElementById('errorEmail');
   const errorMessage = document.getElementById('errorMessage');
 
+  let lastY;
+
+  document.addEventListener('touchstart', function(event) {
+    lastY = event.touches[0].clientY;
+  });
+
+  document.addEventListener('touchmove', function(event) {
+    let currentY = event.touches[0].clientY;
+
+    if (currentY > lastY && window.scrollY === 0) {
+      event.preventDefault();
+    }
+
+    lastY = currentY;
+  });
+
   // Função para exibir mensagem de erro em um elemento
   function showError(element, message) {
     element.textContent = message;
