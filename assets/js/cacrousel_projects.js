@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateCardWidth() {
     if (window.innerWidth > 2300) {
       carouselItem = 300;
-      console.log('300');
+      // console.log('300');
     } else if (window.innerWidth > 1300) {
       carouselItem = 200;
-      console.log('200');
+      // console.log('200');
     } else {
       carouselItem = 140;
-      console.log('140');
+      // console.log('140');
     }
   }
 

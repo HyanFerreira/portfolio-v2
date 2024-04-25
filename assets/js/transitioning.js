@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var deltaY = lastY - startY;
       if (deltaY > 0 && cardElement.scrollTop === 0) {
         // O usuário arrastou para baixo no início do conteúdo
-        console.log('Arrastou para baixo no início');
+        // console.log('Arrastou para baixo no início');
         updateSlider(currentSlideIndex - 1);
       }
 
@@ -41,21 +41,21 @@ document.addEventListener('DOMContentLoaded', function() {
           cardElement.scrollHeight
       ) {
         // O usuário arrastou para cima no final do conteúdo
-        console.log('Arrastou para cima no final');
+        // console.log('Arrastou para cima no final');
         updateSlider(currentSlideIndex + 1);
       }
     });
   }
 
-  function resetScrolling(cardElement) {
-    cardElement.removeEventListener('scroll', scrollingMobile);
-    cardElement.scrollTop = 0;
-    cardElement.addEventListener('scroll', function() {
-      if (cardElement.scrollTop === 0) {
-        resetScrolling(cardElement);
-      }
-    });
-  }
+  // function resetScrolling(cardElement) {
+  //   cardElement.removeEventListener('scroll', scrollingMobile);
+  //   cardElement.scrollTop = 0;
+  //   cardElement.addEventListener('scroll', function() {
+  //     if (cardElement.scrollTop === 0) {
+  //       resetScrolling(cardElement);
+  //     }
+  //   });
+  // }
 
   cards.forEach(card => {
     var chegouAoFinal = false; // variável de controle
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('scroll', function() {
       // Verifica se a rolagem atingiu o topo
       if (card.scrollTop === 0) {
-        console.log('Rolagem atingiu o topo do conteúdo.');
+        // console.log('Rolagem atingiu o topo do conteúdo.');
         chegouAoFinal = false; // reinicia a variável de controle ao chegar ao topo
         scrollingMobile(card);
       }
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         !chegouAoFinal &&
         Math.abs(card.scrollTop + card.clientHeight - card.scrollHeight) <= 1
       ) {
-        console.log('Rolagem atingiu o final do conteúdo.');
+        // console.log('Rolagem atingiu o final do conteúdo.');
         chegouAoFinal = true; // marca que a mensagem de chegada ao final já foi exibida
         scrollingMobile(card);
       }
