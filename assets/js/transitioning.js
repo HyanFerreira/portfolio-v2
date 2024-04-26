@@ -8,78 +8,56 @@ document.addEventListener('DOMContentLoaded', function() {
   let isTransitioning = false;
   let slideHeight = 25;
   let currentSlideIndex = 0;
+  let touchStartY = 0;
 
   function scrollingMobile(cardElement) {
-    var startY;
-    var lastY;
-
     // Ouvinte de evento para touchstart
     cardElement.addEventListener('touchstart', function(e) {
       // Captura a posição inicial do toque
-      startY = e.touches[0].clientY;
-    });
-
-    // Ouvinte de evento para touchmove
-    cardElement.addEventListener('touchmove', function(e) {
-      // Captura a posição final do toque
-      lastY = e.touches[0].clientY;
+      touchStartY = e.touches[0].clientY;
     });
 
     // Ouvinte de evento para touchend
-    cardElement.addEventListener('touchend', function() {
-      // Verifica se houve um movimento significativo para cima ou para baixo
-      var deltaY = lastY - startY;
-      if (deltaY > 0 && cardElement.scrollTop === 0) {
-        // O usuário arrastou para baixo no início do conteúdo
-        // console.log('Arrastou para baixo no início');
-        updateSlider(currentSlideIndex - 1);
-      }
+    cardElement.addEventListener('touchend', function(e) {
+      // Captura a posição final do toque
+      var touchEndY = e.changedTouches[0].clientY;
 
-      if (
-        deltaY < 0 &&
-        cardElement.scrollTop + cardElement.clientHeight >=
-          cardElement.scrollHeight
-      ) {
-        // O usuário arrastou para cima no final do conteúdo
-        // console.log('Arrastou para cima no final');
-        updateSlider(currentSlideIndex + 1);
+      // Calcula a diferença entre a posição inicial e final do toque
+      var deltaY = touchEndY - touchStartY;
+
+      // Verifica se o movimento foi significativo
+      if (Math.abs(deltaY) > 50) {
+        // Ajuste este valor conforme necessário
+        if (deltaY > 0 && cardElement.scrollTop === 0) {
+          // O usuário arrastou para baixo no início do conteúdo
+          updateSlider(currentSlideIndex - 1);
+        }
+
+        if (
+          deltaY < 0 &&
+          cardElement.scrollTop + cardElement.clientHeight >=
+            cardElement.scrollHeight
+        ) {
+          // O usuário arrastou para cima no final do conteúdo
+          updateSlider(currentSlideIndex + 1);
+        }
       }
     });
   }
 
-  // function resetScrolling(cardElement) {
-  //   cardElement.removeEventListener('scroll', scrollingMobile);
-  //   cardElement.scrollTop = 0;
-  //   cardElement.addEventListener('scroll', function() {
-  //     if (cardElement.scrollTop === 0) {
-  //       resetScrolling(cardElement);
-  //     }
-  //   });
-  // }
-
   cards.forEach(card => {
-    var chegouAoFinal = false; // variável de controle
-
     card.addEventListener('scroll', function() {
       // Verifica se a rolagem atingiu o topo
       if (card.scrollTop === 0) {
-        // console.log('Rolagem atingiu o topo do conteúdo.');
-        chegouAoFinal = false; // reinicia a variável de controle ao chegar ao topo
         scrollingMobile(card);
       }
 
-      // Verifica se a rolagem atingiu o final (com uma margem de erro)
-      if (
-        !chegouAoFinal &&
-        Math.abs(card.scrollTop + card.clientHeight - card.scrollHeight) <= 1
-      ) {
-        // console.log('Rolagem atingiu o final do conteúdo.');
-        chegouAoFinal = true; // marca que a mensagem de chegada ao final já foi exibida
+      // Verifica se a rolagem atingiu o final
+      if (card.scrollTop + card.clientHeight >= card.scrollHeight) {
         scrollingMobile(card);
       }
     });
 
-    // Sempre adiciona o evento de rolagem móvel
     scrollingMobile(card);
   });
 

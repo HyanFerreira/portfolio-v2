@@ -373,7 +373,6 @@ h1 {
 .slide-limit {
     max-height: 1300px;
     padding: 100px 14%;
-    overflow-y: scroll;
 }
 
 /* About Section */
@@ -391,52 +390,6 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
-
-.button-seta {
-    position: absolute;
-    z-index: 99999;
-    width: 42px;
-    height: 42px;
-    background-color: #0db75f;
-    border-radius: 20px;
-    bottom: 10px;
-    right: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: moveSeta 2s infinite ease-in-out;
-}
-
-.button-seta span {
-    width: 4px;
-    height: 18px;
-    margin: 3px;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-}
-
-.button-seta span:nth-of-type(1) {
-    transform: rotate(-45deg);
-}
-
-.button-seta span:nth-child(2) {
-    transform: rotate(45deg);
-}
-
-@keyframes moveSeta {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
 }
 
 .content-about,
@@ -547,10 +500,62 @@ h1 {
     text-align: justify;
 }
 
+.scroll-seta {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-seta {
+    /* z-index: 99999; */
+    width: 42px;
+    height: 42px;
+    background-color: #0db75f;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: moveSeta 2s infinite ease-in-out;
+}
+
+.button-seta span {
+    width: 4px;
+    height: 18px;
+    margin: 3px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+.button-seta span:nth-of-type(1) {
+    transform: rotate(-45deg);
+}
+
+.button-seta span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+@keyframes moveSeta {
+    0% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(40px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+
 .scroll-mobile {
     width: 100%;
-    height: 100px;
-    display: flex;
+    height: 80px;
+    display: none;
     flex-shrink: 0;
 }
 
@@ -1328,7 +1333,7 @@ h1 {
 
     .slide-limit {
         padding: 100px 6%;
-        /* overflow: auto; */
+        overflow-y: scroll;
     }
 
     .model-project {
@@ -1364,6 +1369,10 @@ h1 {
 @media (max-width: 750px) {
     .button-seta {
         display: none;
+    }
+
+    .scroll-mobile {
+        display: flex;
     }
 
     .navigation-mobile {
