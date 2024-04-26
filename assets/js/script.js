@@ -15,23 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorEmail = document.getElementById('errorEmail');
   const errorMessage = document.getElementById('errorMessage');
 
-  function reloadRefresh() {
-    var windowHeight = window.innerHeight;
-
-    var firstCardTop = document
-      .querySelector('.card:first-child')
-      .getBoundingClientRect().top;
-
-    if (firstCardTop >= 0 && firstCardTop <= windowHeight) {
-      document.documentElement.style.overscrollBehaviorY = 'auto';
-    } else {
-      document.documentElement.style.overscrollBehaviorY = 'contain';
-    }
-  }
-
-  window.addEventListener('scroll', reloadRefresh);
-  window.addEventListener('resize', reloadRefresh);
-
   // Função para exibir mensagem de erro em um elemento
   function showError(element, message) {
     element.textContent = message;

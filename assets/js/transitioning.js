@@ -89,6 +89,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  function reloadRefresh() {
+    if (linkItemsMobile[0].classList.contains('active')) {
+      // console.log('O primeiro card está ativo.');
+      document.documentElement.style.overscrollBehaviorY = 'auto';
+    } else {
+      // console.log('O primeiro card não está ativo.');
+      document.documentElement.style.overscrollBehaviorY = 'contain';
+    }
+  }
+
+  window.addEventListener('touchend', reloadRefresh);
+
   btnSeta.addEventListener('click', function() {
     if (currentSlideIndex < slider.children.length - 1) {
       updateSlider(currentSlideIndex + 1);
