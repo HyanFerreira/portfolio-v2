@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function reloadRefresh() {
     if (document.documentElement.scrollTop === 0) {
-      
+      documentElement.style.overscrollBehaviorY = 'auto!important';
+    } else {
+      documentElement.style.overscrollBehaviorY = 'contain!important';
     }
   }
 

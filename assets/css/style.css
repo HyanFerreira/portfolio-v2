@@ -23,9 +23,9 @@ html {
     overflow: hidden;
 }
 
-html {
-    overscroll-behavior-y: contain !important;
-}
+/* html {
+    overscroll-behavior-y: contain!important;
+} */
 
 .container-slider,
 .container-navigation,
