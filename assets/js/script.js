@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorEmail = document.getElementById('errorEmail');
   const errorMessage = document.getElementById('errorMessage');
 
+  function reloadRefresh() {
+    if (document.documentElement.scrollTop === 0) {
+      
+    }
+  }
+
   // Função para exibir mensagem de erro em um elemento
   function showError(element, message) {
     element.textContent = message;

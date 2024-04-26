@@ -21,11 +21,10 @@
 body,
 html {
     overflow: hidden;
-    overscroll-behavior-y: contain !important;
 }
 
-body {
-    overscroll-behavior-y: contain;
+html {
+    overscroll-behavior-y: contain !important;
 }
 
 .container-slider,
