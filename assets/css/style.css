@@ -573,6 +573,7 @@ h1 {
     left: 50%;
     width: 40px;
     height: 40px;
+    cursor: pointer;
     transform: translate(-50%, -50%) rotate(225deg);
 }
 

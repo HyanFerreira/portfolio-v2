@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const slider = document.querySelector('.container-slider');
   const btnSeta = document.querySelector('.button-seta');
+  const scrolldown = document.querySelector('.scrolldown');
   const linkItems = document.querySelectorAll('.link-item');
   const linkItemsMobile = document.querySelectorAll('.link-item-mobile');
   const cards = document.querySelectorAll('.card');
@@ -101,11 +102,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.addEventListener('touchend', reloadRefresh);
 
-  btnSeta.addEventListener('click', function() {
+  function handleClick() {
     if (currentSlideIndex < slider.children.length - 1) {
       updateSlider(currentSlideIndex + 1);
     }
-  });
+  }
+
+  btnSeta.addEventListener('click', handleClick);
+  scrolldown.addEventListener('click', handleClick);
 
   function scrolling(event) {
     if (event.deltaY > 0 && currentSlideIndex < slider.children.length - 1) {
