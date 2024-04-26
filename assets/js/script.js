@@ -16,13 +16,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorMessage = document.getElementById('errorMessage');
 
   function reloadRefresh() {
-    if (document.documentElement.scrollTop === 0) {
-      documentElement.style.overscrollBehaviorY = 'auto!important';
+    var windowHeight = window.innerHeight;
+
+    var firstCardTop = document
+      .querySelector('.card:first-child')
+      .getBoundingClientRect().top;
+
+    if (firstCardTop >= 0 && firstCardTop <= windowHeight) {
+      document.documentElement.style.overscrollBehaviorY = 'auto';
     } else {
-      documentElement.style.overscrollBehaviorY = 'contain!important';
+      document.documentElement.style.overscrollBehaviorY = 'contain';
     }
   }
 
+  window.addEventListener('scroll', reloadRefresh);
   window.addEventListener('resize', reloadRefresh);
 
   // Função para exibir mensagem de erro em um elemento
