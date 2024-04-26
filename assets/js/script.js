@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  window.addEventListener('resize', reloadRefresh);
+
   // Função para exibir mensagem de erro em um elemento
   function showError(element, message) {
     element.textContent = message;
