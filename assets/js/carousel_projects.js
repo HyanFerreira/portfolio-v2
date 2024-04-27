@@ -57,8 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
     transitionNext();
   });
 
+  let clickable = true;
+  
   prevBtn.addEventListener('click', () => {
-    transitionPrev();
+    if (clickable) {
+      transitionPrev();
+      clickable = false;
+      setTimeout(function() {
+        clickable = true;
+      }, 900);
+    }
   });
 
   document.addEventListener('keydown', function(event) {

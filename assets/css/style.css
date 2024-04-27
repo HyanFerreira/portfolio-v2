@@ -339,7 +339,6 @@ h1 {
     transform: translateX(calc(70px * 3));
 }
 
-
 /* Conteúdo principal */
 .main-index {
     position: absolute;
@@ -370,6 +369,7 @@ h1 {
 }
 
 .slide-limit {
+    position: relative;
     max-height: 1300px;
     padding: 100px 14%;
 }
@@ -500,6 +500,9 @@ h1 {
 }
 
 .scroll-seta {
+    position: absolute;
+    bottom: 8%;
+    left: 0;
     width: 100%;
     height: 50px;
     display: flex;
@@ -507,8 +510,8 @@ h1 {
     justify-content: center;
 }
 
-.button-seta {
-    /* z-index: 99999; */
+.button-seta,
+.nav-btns-seta {
     width: 42px;
     height: 42px;
     background-color: #0db75f;
@@ -517,10 +520,14 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.button-seta {
     animation: moveSeta 2s infinite ease-in-out;
 }
 
-.button-seta span {
+.button-seta span,
+.nav-btns-seta span {
     width: 4px;
     height: 18px;
     margin: 3px;
@@ -528,12 +535,18 @@ h1 {
     background-color: #FFFFFF;
 }
 
-.button-seta span:nth-of-type(1) {
+.button-seta span:nth-of-type(1),
+.nav-btns-seta span:nth-of-type(1) {
     transform: rotate(-45deg);
 }
 
-.button-seta span:nth-child(2) {
+.button-seta span:nth-child(2),
+.nav-btns-seta span:nth-of-type(2) {
     transform: rotate(45deg);
+}
+
+.button-seta-prev {
+    transform: rotate(180deg);
 }
 
 @keyframes moveSeta {
@@ -550,6 +563,18 @@ h1 {
     }
 }
 
+.navigation-btns {
+    position: absolute;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navigation-btns:hover {
+    bottom: 15px;
+}
 
 .scroll-mobile {
     width: 100%;
@@ -888,6 +913,10 @@ h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.contact-email span a {
+    color: #000000;
 }
 
 .container-contact-form {
@@ -1302,6 +1331,12 @@ h1 {
     }
 }
 
+@media (max-width: 1650px) {
+    .scroll-seta {
+        position: static;
+    }
+}
+
 @media (min-width: 1600px) {
     .container-skills {
         justify-content: center;
@@ -1312,6 +1347,10 @@ h1 {
 @media (max-width: 1300px) {
     .container-media {
         display: none;
+    }
+
+    .navigation-btns {
+        display: flex;
     }
 
     .media-links-contact {
@@ -1367,6 +1406,13 @@ h1 {
 }
 
 @media (max-width: 750px) {
+    .media-links-contact {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+
+    }
+
     .button-seta {
         display: none;
     }
@@ -1377,6 +1423,10 @@ h1 {
 
     .navigation-mobile {
         display: flex;
+    }
+
+    .navigation-btns {
+        display: none;
     }
 
     .navigation {
