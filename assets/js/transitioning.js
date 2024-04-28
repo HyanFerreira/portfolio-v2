@@ -119,6 +119,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  const alertEnabled = document.querySelector('.alert-enabled');
+  const alertDisabled = document.querySelector('.alert-disabled');
+
+  let isAlertDisabledActive = true;
+
+  function alertMessage() {
+    if (window.innerWidth >= 1300) {
+      if (!isAlertDisabledActive) {
+        alertDisabled.style.animation = 'none';
+        alertEnabled.style.animation = 'var(--alert-animation)';
+        isAlertDisabledActive = true;
+      }
+    } else {
+      if (isAlertDisabledActive) {
+        alertEnabled.style.animation = 'none';
+        alertDisabled.style.animation = 'var(--alert-animation)';
+        isAlertDisabledActive = false;
+      }
+    }
+  }
+
+  window.addEventListener('resize', alertMessage);
+
   function enableScrolling() {
     if (window.innerWidth >= 1300) {
       window.addEventListener('wheel', scrolling);

@@ -5,6 +5,7 @@
     --purple: #b5008E;
     --blue: #3023AE;
     --blue-alpha: #3023AE1f;
+    --alert-animation: alertDisplayed 3s ease-in-out;
 }
 
 /* Reset */
@@ -26,6 +27,55 @@ html {
 /* html {
     overscroll-behavior-y: contain!important;
 } */
+
+.alert-enabled,
+.alert-disabled {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 999999;
+    width: 240px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0DB75F;
+    color: #FFFFFF;
+    font-weight: 500;
+    transition: all 900ms;
+}
+
+.alert-disabled {
+    gap: 10px;
+}
+
+.arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.arrows img {
+    width: 20px;
+}
+
+@keyframes alertDisplayed {
+    0% {
+        top: -50px;
+    }
+
+    25%,
+    50%,
+    75% {
+        top: 0;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    100% {
+        top: -50px;
+    }
+}
 
 .container-slider,
 .container-navigation,
@@ -561,19 +611,6 @@ h1 {
     100% {
         transform: translateY(20px);
     }
-}
-
-.navigation-btns {
-    position: absolute;
-    bottom: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.navigation-btns:hover {
-    bottom: 15px;
 }
 
 .scroll-mobile {
@@ -1349,10 +1386,6 @@ h1 {
         display: none;
     }
 
-    .navigation-btns {
-        display: flex;
-    }
-
     .media-links-contact {
         display: flex;
     }
@@ -1365,8 +1398,7 @@ h1 {
     }
 
     .container-about,
-    .container-contact,
-    .container-projects {
+    .container-contact {
         justify-content: flex-start;
     }
 
@@ -1386,6 +1418,12 @@ h1 {
 
     .line-hor {
         width: 250px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .container-projects {
+        justify-content: flex-start;
     }
 }
 
@@ -1423,10 +1461,6 @@ h1 {
 
     .navigation-mobile {
         display: flex;
-    }
-
-    .navigation-btns {
-        display: none;
     }
 
     .navigation {
