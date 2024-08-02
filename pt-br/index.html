@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Portfolio - Hyan Ferreira</title>
+</head>
+
+<body>
+    <div class="alert-enabled">
+        <span>Função de rolagem ativada!</span>
+    </div>
+    <div class="alert-disabled active">
+        <span>Função de rolagem desativada! <br> Utilizar as setas para navegar.</span>
+        <div class="arrows">
+            <img src="../assets/img/alerts/arrow-up.svg" alt="arrow up">
+            <img src="../assets/img/alerts/arrow-down.svg" alt="arrow down">
+        </div>
+    </div>
+    <header class="header-index">
+        <div class="container-navigation">
+            <nav class="navigation">
+                <div class="nav-padding">
+                    <div class="logotipo">
+                        <a href="index.html">
+                            <img src="../assets/img/logotipo_green.svg" alt="logotipo">
+                        </a>
+                    </div>
+                    <div class="nav-links">
+                        <ul class="ul-links">
+                            <li class="link-item selected" id="about">
+                                <a href="">Sobre</a>
+                            </li>
+                            <li class="link-item" id="skills">
+                                <a href="">Habilidades</a>
+                            </li>
+                            <li class="link-item" id="projects">
+                                <a href="">Projetos</a>
+                            </li>
+                            <li class="link-item" id="contact">
+                                <a href="">Contato</a>
+                            </li>
+                            <div class="select-language">
+                                <a href="../pt-br/index.html">PT-BR</a>
+                                <a href="../en/index.html">EN</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="container-media">
+                <div class="media-links">
+                    <a href="https://www.linkedin.com/in/hyanferreira/" target="_blank">
+                        <div class="media-item">
+                            <div class="media-item-img media-linkedin">
+                                <img src="../assets/img/media/vetor_linkedin.svg" alt="linkedin">
+                            </div>
+                            <div class="media-span">
+                                <span>Linkedin</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/hferreira_dev/" target="_blank">
+                        <div class="media-item">
+                            <div class="media-item-img media-instagram">
+                                <img src="../assets/img/media/vetor_instagram.svg" alt="instagram">
+                            </div>
+                            <div class="media-span">
+                                <span>Instagram</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://twitter.com/hferreira_dev" target="_blank">
+                        <div class="media-item">
+                            <div class="media-item-img media-twitter">
+                                <img src="../assets/img/media/vetor_X.svg" alt="twitter">
+                            </div>
+                            <div class="media-span">
+                                <span>Twitter</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <nav class="navigation-mobile">
+                <div class="nav-links-mobile">
+                    <ul class="ul-links-mobile">
+                        <li class="link-item-mobile active">
+                            <a href="#">
+                                <span class="text">Sobre</span>
+                                <span class="icon">
+                                    <img src="../assets/img/mobile/about.svg" alt="">
+                                </span>
+                            </a>
+                        </li>
+                        <li class="link-item-mobile">
+                            <a href="#">
+                                <span class="text">Habilidades</span>
+                                <span class="icon">
+                                    <img src="../assets/img/mobile/skills.svg" alt="">
+                                </span>
+                            </a>
+                        </li>
+                        <li class="link-item-mobile">
+                            <a href="#">
+                                <span class="text">Projetos</span>
+                                <span class="icon">
+                                    <img src="../assets/img/mobile/projects.svg" alt="">
+                                </span>
+                            </a>
+                        </li>
+                        <li class="link-item-mobile">
+                            <a href="#">
+                                <span class="text">Contato</span>
+                                <span class="icon">
+                                    <img src="../assets/img/mobile/contact.svg" alt="">
+                                </span>
+                            </a>
+                        </li>
+                        <div class="indicator"></div>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main-index">
+        <div class="container-main">
+            <div class="container-slider">
+                <section class="slide">
+                    <div class="container-about slide-limit card" id="card-about">
+                        <div class="logotipo mobile">
+                            <a href="index.html">
+                                <img src="../assets/img/logotipo_green.svg" alt="logotipo">
+                            </a>
+                        </div>
+                        <div class="about-photo">
+                            <div class="content-about">
+                                <div class="text-about">
+                                    <span class="span-green we500">Bem-vindo(a)</span>
+                                    <h1><span class="span-green">Desenvolvedor</span> & <span
+                                            class="span-green">Designer</span> Web</h1>
+                                    <span>Transforme o seu negócio com as melhores soluções inovadoras. Desde a primeira
+                                        linha de código até a hospedagem na web.</span>
+                                    <div class="text-years-projects">
+                                        <div class="text-years">
+                                            <h1>03</h1>
+                                            <span><span class="span-green">anos</span> de <br>experiência</span>
+                                        </div>
+                                        <div class="text-projects">
+                                            <h1>+10</h1>
+                                            <span><span class="span-green">projetos</span> <br>completos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buttons-about">
+                                    <button class="btn-github">
+                                        <a href="https://github.com/HyanFerreira" class="we500" target="_blank">
+                                            <img src="../assets/img/media/github.svg" alt="github">GitHub
+                                        </a>
+                                    </button>
+                                    <button class="btn-cv">
+                                        <a href="./hyanferreira-cv.pdf" class="we500" target="_blank">
+                                            <img src="../assets/img/media/cv.svg" alt="cv">CV
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="content-photo">
+                                <img src="../assets/img/photo_profile_mold.png" alt="">
+                            </div>
+                        </div>
+                        <div class="about-desc">
+                            <h1><span class="span-green">Sobre</span> Mim</h1>
+                            <span>Olá! Eu sou o Hyan Ferreira, um Desenvolvedor Web apaixonado e criativo, a minha
+                                motivação
+                                está
+                                em transformar ideias criativas em Websites incríveis, utilizando tecnologias como
+                                HTML, CSS, JavaScript e React. Quando começo a desenvolver, não estou apenas digitando
+                                código
+                                no
+                                na tela; estou também transformando-os em verdadeiras obras de arte digital. 100%
+                                empenhado
+                                e dedicado não só a alcançar o sucesso, mas também a transformar a sua visão
+                                em
+                                realidade digital, pixel a pixel. Com uma sólida formação e uma insaciável
+                                paixão
+                                pela aprendizagem, a expressão "parar de estudar" não faz parte do meu vocabulário, pois
+                                cada
+                                desafio é uma nova oportunidade para alargar e melhorar as minhas
+                                habilidades.</span>
+                        </div>
+                        <div class="scroll-seta">
+                            <div class="button-seta">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="scroll-mobile">
+                            <div class="scroll">
+                                <div class="scrolldown">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="slide">
+                    <div class="container-skills slide-limit card" id="card-skills">
+                        <h1>Frameworks<span class="span-black">,</span> Tecnologias <span class="span-black">&</span>
+                            Design <span class="span-black">Software</span></h1>
+                        <div class="cards-skills">
+                            <div class="card-skill">
+                                <div class="card-sup">
+                                    <h1>Front-end</h1>
+                                </div>
+                                <div class="card-desc">
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/html5-original.svg" alt="html5">
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/css3-original.svg" alt="css3">
+                                        <span>CSS3</span>
+                                    </div>
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/javascript-original.svg" alt="javascript">
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/react-original.svg" alt="react">
+                                        <span>React</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-skill">
+                                <div class="card-sup">
+                                    <h1>Back-end</h1>
+                                </div>
+                                <div class="card-desc">
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/nodejs-original.svg" alt="nodejs">
+                                        <span>NodeJS</span>
+                                    </div>
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/mysql-original.svg" alt="mysql">
+                                        <span>MySQL</span>
+                                    </div>
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/python-original.svg" alt="python">
+                                        <span>Python</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-skill">
+                                <div class="card-sup">
+                                    <h1>Design <br> Software</h1>
+                                </div>
+                                <div class="card-desc">
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/photoshop-original.svg" alt="photoshop">
+                                        <span>Photoshop</span>
+                                    </div>
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/figma-original.svg" alt="figma">
+                                        <span>Figma</span>
+                                    </div>
+                                    <div class="card-item">
+                                        <img src="../assets/img/technologies/canva-original.svg" alt="canva">
+                                        <span>Canva</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-skill">
+                            <h1><span class="span-black">Formação</span> Acadêmica</h1>
+                            <span>Formado e certificado no curso Técnico Integrado ao Ensino Médio e Tecnólogo em
+                                Análise e Desenvolvimento de Sistemas do Instituto Federal de Educação, Ciência e
+                                Tecnologia de São Paulo, embarco em uma jornada constante de aprendizado,
+                                especialização
+                                e aplicação prática dos meus conhecimentos. Desde a conceção de projetos envolventes até
+                                a
+                                funcionalidades dinâmicas, cada projeto é uma oportunidade de colocar em prática minhas
+                                habilidades
+                                adquiridas, alimentando minha paixão por criar soluções inovadoras e funcionais no mundo
+                                digital.</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="slide">
+                    <div class="container-projects slide-limit card" id="card-projects">
+                        <div class="content-projects">
+                            <div class="project-desc">
+                                <span class="span-green">Projetos</span>
+                                <h1><span class="span-green">Projetos</span> <br> Mais <span
+                                        class="span-green">Recentes</span></h1>
+                                <span>Selecionei alguns dos meus últimos <br>
+                                    projectos para partilhar convosco. <br> Mas se quiser ver mais dos meus projectos,
+                                    <br>não hesite em visitar o meu GitHub.</span>
+                                <div class="buttons-about">
+                                    <button class="btn-github">
+                                        <a href="https://github.com/HyanFerreira" class="we500" target="_blank">
+                                            <img src="../assets/img/media/github.svg" alt="github">GitHub
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="project-carousel">
+                                <div class="content-carousel-limit">
+                                    <div class="content-carousel">
+                                        <div class="model-project">
+                                            <img src="../assets/img/projects/htechinfo-netlify-app.png" alt="project">
+                                            <div class="access-text">
+                                                <span>Acessar Website</span>
+                                            </div>
+                                        </div>
+                                        <div class="model-project">
+                                            <img src="../assets/img/projects/hyanferreira-netlify-app.png"
+                                                alt="project">
+                                            <div class="access-text">
+                                                <span>Acessar Website</span>
+                                            </div>
+                                        </div>
+                                        <div class="model-project">
+                                            <img src="../assets/img/projects/movieuniverse2023-netlify-app.png"
+                                                alt="project">
+                                            <div class="access-text">
+                                                <span>Acessar Website</span>
+                                            </div>
+                                        </div>
+                                        <div class="model-project">
+                                            <img src="../assets/img/projects/saveplant-netlify-app.png" alt="project">
+                                            <div class="access-text">
+                                                <span>Acessar Website</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="content-carousel-btns">
+                                    <button class="btn prevBtnCarousel">
+                                        Anterior
+                                    </button>
+                                    <button class="btn nextBtnCarousel">
+                                        Próximo
+                                    </button>
+                                    <div class="line-hor"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="slide">
+                    <div class="container-contact slide-limit card" id="card-contact">
+                        <div class="content-contact">
+                            <div class="contact-desc">
+                                <span class="span-green">Contato</span>
+                                <h1><span class="span-green"> Envie-me </span> uma <span
+                                        class="span-green">mensagem</span>
+                                </h1>
+                                <span>Não hesite em me enviar uma mensagem, vamos juntos dar vida aos seus projectos,
+                                    fazendo de cada pixel
+                                    uma oportunidade de inovação e sucesso.</span>
+                                <div class="contact-email">
+                                    <img src="../assets/img/contact/email-green.svg" alt="email">
+                                    <span>
+                                        <a href="mailto:hyanferreira.dev@gmail.com">hyanferreira.dev@gmail.com</a>
+                                    </span>
+                                </div>
+                                <div class="media-links-contact">
+                                    <a class="btn" href="https://www.linkedin.com/in/hyanferreira/" target="_blank">
+                                        <img src="../assets/img/contact/vetor_linkedin_green.svg" alt="linkedin">
+                                        <span>Linkedin</span>
+                                    </a>
+                                    <a class="btn" href="https://www.instagram.com/hferreira_dev/" target="_blank">
+                                        <img src="../assets/img/contact/vetor_instagram_green.svg" alt="instagram">
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a class="btn" href="https://twitter.com/hferreira_dev" target="_blank">
+                                        <img src="../assets/img/contact/vetor_X_green.svg" alt="twitter">
+                                        <span>Twitter</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="container-contact-form">
+                                <form class="contact-form" action="https://formsubmit.co/hyanferreira.dev@email.com"
+                                    method="POST">
+                                    <fieldset>
+                                        <legend>
+                                            <h1>Contato</h1>
+                                        </legend>
+                                        <div class="area-input">
+                                            <div class="input-label">
+                                                <input type="text" id="name" required>
+                                                <label id="nameLabel" for="name">Nome <span
+                                                        class="span-green">*</span></label>
+                                            </div>
+                                            <div class="error" id="errorName"></div>
+                                        </div>
+                                        <div class="area-input">
+                                            <div class="input-label">
+                                                <input type="text" id="email" required>
+                                                <label id="emailLabel" for="email">Email <span
+                                                        class="span-green">*</span></label>
+                                            </div>
+                                            <div class="error" id="errorEmail"></div>
+                                        </div>
+                                        <div class="area-input">
+                                            <div class="input-label">
+                                                <textarea name="message" id="message" required></textarea>
+                                                <label id="messageLabel" for="message">Mensagem <span
+                                                        class="span-green">*</span></label>
+                                            </div>
+                                            <div class="error" id="errorMessage"></div>
+                                        </div>
+                                        <div class="area-button-contact">
+                                            <button class="btn btn-submit-contact">Enviar</button>
+                                            <div class="error" id="errorSubmit"></div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <div class="modal-contact-thanks">
+        <div class="content-thanks">
+            <div class="thanks">
+                <div class="container-loading">
+                    <div class="text-loading">
+                        <h1>Carregando...</h1>
+                    </div>
+                    <div class="loading">
+                        <div class="line-box">
+                            <div class="line-loading"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="thanks-desc">
+                    <h1><span class="span-green">Mensagem</span> enviada com <span class="span-green">sucesso</span>!
+                    </h1>
+                    <span>Obrigado por entrar em contato. Em breve retornarei.</span>
+                    <button class="btn" id="btnClose">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="../assets/js/transitioning.js"></script>
+    <script src="../assets/js/carousel_projects.js"></script>
+    <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

@@ -31,12 +31,12 @@ html {
 .alert-enabled,
 .alert-disabled {
     position: absolute;
-    top: -50px;
+    top: -80px;
     left: 50%;
     transform: translate(-50%);
     z-index: 999999;
-    width: 240px;
-    height: 50px;
+    width: 280px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +62,7 @@ html {
 
 @keyframes alertDisplayed {
     0% {
-        top: -50px;
+        top: -80px;
     }
 
     25%,
@@ -73,7 +73,7 @@ html {
     }
 
     100% {
-        top: -50px;
+        top: -80px;
     }
 }
 
@@ -148,7 +148,13 @@ h1 {
     gap: 40px;
 }
 
+.link-item {
+    cursor: pointer;
+    padding: 8px 15px;
+}
+
 .link-item a {
+    pointer-events: none;
     color: #0db75f;
     transition: 0.3s ease-in-out;
     padding: 8px 15px;
