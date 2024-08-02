@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
       showError(errorName, 'Name must contain at least 3 characters.');
       nameLabel.classList.add('error');
       nameInput.classList.add('error');
-    } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+    } else if (!/^[\p{L}\s]+$/u.test(name)) {
       showError(errorName, 'Do not use numbers and/or special characters.');
       nameLabel.classList.add('error');
       nameInput.classList.add('error');
