@@ -162,7 +162,7 @@ h1 {
     font-weight: 500;
 }
 
-.link-item a:hover {
+.link-item:hover {
     background-color: #0db75f;
     color: #FFFFFF;
 }
