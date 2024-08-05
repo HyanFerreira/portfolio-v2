@@ -15,6 +15,36 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorEmail = document.getElementById('errorEmail');
   const errorMessage = document.getElementById('errorMessage');
 
+  const dropdowns = document.querySelectorAll('.dropdown-language');
+
+  dropdowns.forEach(dropdown => {
+    const select = dropdown.querySelector('.select-language');
+    const ionIcon = dropdown.querySelector('.caret-down-outline');
+    const menuLanguage = dropdown.querySelector('.menu-language');
+    const options = dropdown.querySelectorAll('.menu-language li');
+    const selectedLanguage = dropdown.querySelector('.selected-language');
+
+    select.addEventListener('click', () => {
+      select.classList.toggle('select-language-clicked');
+      ionIcon.classList.toggle('rotate');
+      menuLanguage.classList.toggle('menu-language-open');
+    });
+
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        selectedLanguage.innerText = option.innerText;
+        select.classList.remove('select-language-clicked');
+        ionIcon.classList.remove('rotate');
+        menuLanguage.classList.remove('menu-language-open');
+
+        options.forEach(option => {
+          option.classList.remove('active');
+        });
+        option.classList.add('active');
+      });
+    });
+  });
+
   // Função para exibir mensagem de erro em um elemento
   function showError(element, message) {
     element.textContent = message;

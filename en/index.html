@@ -48,9 +48,22 @@
                             <li class="link-item" id="contact">
                                 <a href="#">Contact</a>
                             </li>
-                            <div class="select-language">
-                                <a href="../pt-br/index.html">PT-BR</a>
-                                <a href="../en/index.html">EN</a>
+                            <div class="dropdown-language">
+                                <div class="select-language">
+                                    <div class="group-select">
+                                        <ion-icon class="ion-icon" name="globe-outline"></ion-icon>
+                                        <span class="selected-language">Inglês</span>
+                                    </div>
+                                    <ion-icon class="ion-icon caret-down-outline" name="caret-down-outline"></ion-icon>
+                                </div>
+                                <ul class="menu-language">
+                                    <a href="../pt-br/">
+                                        <li>Português</li>
+                                    </a>
+                                    <a href="../en/">
+                                        <li class="active">Inglês</li>
+                                    </a>
+                                </ul>
                             </div>
                         </ul>
                     </div>
@@ -90,7 +103,7 @@
                     </a>
                 </div>
             </div>
-            <nav class="navigation-mobile">
+            <!-- <nav class="navigation-mobile">
                 <div class="nav-links-mobile">
                     <ul class="ul-links-mobile">
                         <li class="link-item-mobile active">
@@ -128,7 +141,7 @@
                         <div class="indicator"></div>
                     </ul>
                 </div>
-            </nav>
+            </nav> -->
         </div>
     </header>
     <main class="main-index">
@@ -136,11 +149,11 @@
             <div class="container-slider">
                 <section class="slide">
                     <div class="container-about slide-limit card" id="card-about">
-                        <div class="logotipo mobile">
+                        <!-- <div class="logotipo mobile">
                             <a href="index.html">
                                 <img src="../assets/img/logotipo_green.svg" alt="logotipo">
                             </a>
-                        </div>
+                        </div> -->
                         <div class="about-photo">
                             <div class="content-about">
                                 <div class="text-about">
@@ -450,6 +463,8 @@
             </div>
         </div>
     </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="../assets/js/transitioning.js"></script>
     <script src="../assets/js/carousel_projects.js"></script>
