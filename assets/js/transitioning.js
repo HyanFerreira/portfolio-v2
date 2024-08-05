@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const btnSeta = document.querySelector('.button-seta');
   const scrolldown = document.querySelector('.scrolldown');
   const linkItems = document.querySelectorAll('.link-item');
-  const linkItemsMobile = document.querySelectorAll('.link-item-mobile');
+  // const linkItemsMobile = document.querySelectorAll('.link-item-mobile');
   const cards = document.querySelectorAll('.card');
 
   let isTransitioning = false;
@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
       slider.style.transform = `translateY(-${slideHeight * index}%)`;
       linkItems.forEach(item => item.classList.remove('selected'));
       linkItems[index].classList.add('selected');
-      linkItemsMobile.forEach(item => item.classList.remove('active'));
-      linkItemsMobile[index].classList.add('active');
+      // linkItemsMobile.forEach(item => item.classList.remove('active'));
+      // linkItemsMobile[index].classList.add('active');
       setTimeout(() => {
         isTransitioning = false;
       }, 900);
@@ -84,14 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  linkItemsMobile.forEach((item, index) => {
-    item.addEventListener('click', function() {
-      updateSlider(index);
-    });
-  });
+  // linkItemsMobile.forEach((item, index) => {
+  //   item.addEventListener('click', function() {
+  //     updateSlider(index);
+  //   });
+  // });
 
   function reloadRefresh() {
-    if (linkItemsMobile[0].classList.contains('active')) {
+    if (linkItems[0].classList.contains('selected')) {
       // console.log('O primeiro card está ativo.');
       document.documentElement.style.overscrollBehaviorY = 'auto';
     } else {
