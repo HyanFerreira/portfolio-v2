@@ -125,17 +125,19 @@ document.addEventListener('DOMContentLoaded', function() {
   let isAlertDisabledActive = true;
 
   function alertMessage() {
-    if (window.innerWidth >= 1300) {
-      if (!isAlertDisabledActive) {
-        alertDisabled.style.animation = 'none';
-        alertEnabled.style.animation = 'var(--alert-animation)';
-        isAlertDisabledActive = true;
-      }
-    } else {
-      if (isAlertDisabledActive) {
-        alertEnabled.style.animation = 'none';
-        alertDisabled.style.animation = 'var(--alert-animation)';
-        isAlertDisabledActive = false;
+    if (window.innerWidth >= 1080) {
+      if (window.innerWidth >= 1300) {
+        if (!isAlertDisabledActive) {
+          alertDisabled.style.animation = 'none';
+          alertEnabled.style.animation = 'var(--alert-animation)';
+          isAlertDisabledActive = true;
+        }
+      } else {
+        if (isAlertDisabledActive) {
+          alertEnabled.style.animation = 'none';
+          alertDisabled.style.animation = 'var(--alert-animation)';
+          isAlertDisabledActive = false;
+        }
       }
     }
   }
