@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const dropdowns = document.querySelectorAll('.dropdown-language');
 
+  const hamburguer = document.querySelector('.hamburguer');
+
+  hamburguer.addEventListener('click', () => {
+    hamburguer.classList.toggle('active');
+  });
+
   dropdowns.forEach(dropdown => {
     const select = dropdown.querySelector('.select-language');
     const ionIcon = dropdown.querySelector('.caret-down-outline');

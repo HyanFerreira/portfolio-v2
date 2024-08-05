@@ -115,6 +115,7 @@ h1 {
     align-items: center;
     justify-content: center;
     /* border-bottom: 1px solid #0db75f; */
+    padding: 0 10px;
 }
 
 .logotipo {
@@ -137,8 +138,10 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 0;
     margin: 0 2%;
+    border-bottom: 2px solid #0DB75F;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px
 }
 
 .ul-links {
@@ -260,6 +263,33 @@ h1 {
 .menu-language-open {
     display: flex;
     opacity: 1;
+}
+
+.hamburguer {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    margin: 5px auto;
+    background-color: #0DB75F;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburguer.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburguer.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburguer.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Media */
@@ -1522,8 +1552,15 @@ h1 {
     .container-projects {
         justify-content: flex-start;
     }
+}
+
+@media (max-width: 1000px) {
     .ul-links {
         display: none;
+    }
+
+    .hamburguer {
+        display: block;
     }
 }
 
