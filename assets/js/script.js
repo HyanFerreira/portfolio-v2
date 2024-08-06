@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const path = window.location.pathname;
+
   const nameInput = document.getElementById('name');
   const nameLabel = document.getElementById('nameLabel');
 
@@ -18,9 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const dropdowns = document.querySelectorAll('.dropdown-language');
 
   const hamburguer = document.querySelector('.hamburguer');
+  const navLinks = document.querySelector('.nav-links');
+
+  const ulLinks = document.querySelectorAll('.ul-links li');
 
   hamburguer.addEventListener('click', () => {
     hamburguer.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  ulLinks.forEach(ulLink => {
+    ulLink.addEventListener('click', () => {
+      hamburguer.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
   });
 
   dropdowns.forEach(dropdown => {
@@ -65,15 +78,27 @@ document.addEventListener('DOMContentLoaded', function() {
   function validateName() {
     const name = nameInput.value.trim();
     if (name === '') {
-      showError(errorName, 'Fill in this field.');
+      if (path.includes('/pt-br/')) {
+        showError(errorName, 'Preencha este campo.');
+      } else {
+        showError(errorName, 'Fill in this field.');
+      }
       nameLabel.classList.add('error');
       nameInput.classList.add('error');
     } else if (name.length < 3) {
-      showError(errorName, 'Name must contain at least 3 characters.');
+      if (path.includes('/pt-br/')) {
+        showError(errorName, 'Nome deve conter no mínimo 3 caracteres.');
+      } else {
+        showError(errorName, 'Name must contain at least 3 characters.');
+      }
       nameLabel.classList.add('error');
       nameInput.classList.add('error');
     } else if (!/^[\p{L}\s]+$/u.test(name)) {
-      showError(errorName, 'Do not use numbers and/or special characters.');
+      if (path.includes('/pt-br/')) {
+        showError(errorName, 'Não use números ou caracteres especiais.');
+      } else {
+        showError(errorName, 'Do not use numbers or special characters.');
+      }
       nameLabel.classList.add('error');
       nameInput.classList.add('error');
     } else {
@@ -87,11 +112,19 @@ document.addEventListener('DOMContentLoaded', function() {
   function validateEmail() {
     const email = emailInput.value.trim();
     if (email === '') {
-      showError(errorEmail, 'Fill in this field.');
+      if (path.includes('/pt-br/')) {
+        showError(errorEmail, 'Preencha este campo.');
+      } else {
+        showError(errorEmail, 'Fill in this field.');
+      }
       emailLabel.classList.add('error');
       emailInput.classList.add('error');
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      showError(errorEmail, 'Enter a valid email.');
+      if (path.includes('/pt-br/')) {
+        showError(errorEmail, 'Insira um e-mail válido.');
+      } else {
+        showError(errorEmail, 'Enter a valid e-mail.');
+      }
       emailLabel.classList.add('error');
       emailInput.classList.add('error');
     } else {
@@ -105,11 +138,19 @@ document.addEventListener('DOMContentLoaded', function() {
   function validateMessage() {
     const message = messageInput.value.trim();
     if (message === '') {
-      showError(errorMessage, 'Fill in this field.');
+      if (path.includes('/pt-br/')) {
+        showError(errorMessage, 'Preencha este campo.');
+      } else {
+        showError(errorMessage, 'Fill in this field.');
+      }
       messageLabel.classList.add('error');
       messageInput.classList.add('error');
     } else if (message.length < 5) {
-      showError(errorMessage, 'Message must contain at least 5 characters.');
+      if (path.includes('/pt-br/')) {
+        showError(errorMessage, 'Mensagem deve conter no mínimo 5 caracteres.');
+      } else {
+        showError(errorMessage, 'Message must contain at least 5 characters.');
+      }
       messageLabel.classList.add('error');
       messageInput.classList.add('error');
     } else {
@@ -184,7 +225,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       loading();
     } else {
-      showError(errorSubmit, 'Please fill in all fields correctly.');
+      if (path.includes('/pt-br/')) {
+        showError(errorSubmit, 'Preencha todos os campos corretamente.');
+      } else {
+        showError(errorSubmit, 'Please fill in all fields correctly.');
+      }
     }
   }
 
