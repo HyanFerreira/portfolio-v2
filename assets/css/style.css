@@ -934,7 +934,7 @@ h1 {
 }
 
 .content-carousel-limit {
-    width: 690px;
+    width: 810px;
     overflow: hidden;
     padding: 30px 15px;
     display: flex;
@@ -950,19 +950,76 @@ h1 {
 }
 
 .model-project {
-    width: 200px;
-    height: 280px;
-    background-color: #0DB75F;
+    width: 240px;
+    height: 375px;
+    background-color: #FFFFFF;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position: relative;
     transition: all 700ms;
     flex-shrink: 0;
-    cursor: pointer;
-    border-radius: 5px;
+    /* cursor: pointer; */
+    overflow: hidden;
+    border-radius: 20px;
+    border: 6px solid #FFFFFF;
+    display: flex;
+    flex-direction: column;
 }
 
-.model-project img {
+.project-img {
+    height: 180px;
+    width: 100%;
+    background: #0DB75F;
+    border-radius: 100% 0% 100% 0% / 0% 50% 50% 100%;
+    display: grid;
+    place-items: center;
+}
+
+.project-desc-card {
+    padding: 15px 10px 0 10px;
+    height: 120px;
+}
+
+.limited-text {
+    padding-top: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.project-btns button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.project-btns button:hover {
+    background-color: #0DB75F;
+    color: #FFFFFF;
+}
+
+.ion-icon-github {
+    font-size: 20px;
+}
+
+.btnDeploy:hover svg path {
+    fill: white;
+    stroke: white;
+}
+
+/* .model-project img {
     width: 100%;
 }
 
@@ -1001,7 +1058,7 @@ h1 {
 
 .model-project:hover .access-text {
     opacity: 1;
-}
+} */
 
 /* Buttons Carousel */
 .content-carousel-btns {
@@ -1011,23 +1068,13 @@ h1 {
     align-items: center;
 }
 
-.prevBtnCarousel,
-.nextBtnCarousel {
-    background-color: #0DB75F;
-    padding: 3px 10px;
-    width: 85px;
-    border: 0;
-}
-
-.prevBtnCarousel:hover,
-.nextBtnCarousel:hover,
 .thanks button:hover {
     background-color: #0db75fdc;
     color: #FFFFFF;
 }
 
 .line-hor {
-    width: 430px;
+    width: 550px;
     height: 3px;
     background-color: #0DB75F;
 }
@@ -1042,6 +1089,12 @@ h1 {
     color: #0DB75F;
     transition: ease-in-out .4s;
     font-weight: 500;
+}
+
+.prevBtnCarousel,
+.nextBtnCarousel {
+    background-color: #0DB75F;
+    color: #FFFFFF;
 }
 
 /* Contact Section */

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const prevBtn = document.querySelector('.prevBtnCarousel');
 
   let isTransitioning = false;
-  let carouselItem = 200;
+  let carouselItem = 240;
   let carouselItemGap = 30;
 
   function updateCardWidth() {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
       carouselItem = 300;
       // console.log('300');
     } else if (window.innerWidth > 1300) {
-      carouselItem = 200;
+      carouselItem = 240;
       // console.log('200');
     } else {
       carouselItem = 140;
