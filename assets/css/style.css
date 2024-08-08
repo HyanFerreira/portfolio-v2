@@ -1454,10 +1454,10 @@ h1 {
         overflow-y: scroll;
     }
 
-    .model-project {
+    /* .model-project {
         width: 200px;
         height: 300px;
-    }
+    } */
 
     /* .content-carousel-limit {
         width: 960px;
@@ -1468,7 +1468,7 @@ h1 {
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .container-projects {
         justify-content: flex-start;
     }
