@@ -62,9 +62,25 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollingMobile(card);
   });
 
+  const containerMedia = document.querySelector('.container-media');
+
   function updateSlider(index) {
     if (!isTransitioning && linkItems[index]) {
       isTransitioning = true;
+
+      // Checa se está saindo do último slide
+      if (
+        currentSlideIndex === slider.children.length - 1 &&
+        index < currentSlideIndex
+      ) {
+        containerMedia.style.bottom = '40px';
+      }
+
+      // Checa se está chegando no último slide
+      if (index === slider.children.length - 1 && index > currentSlideIndex) {
+        containerMedia.style.bottom = '80px';
+      }
+
       currentSlideIndex = index;
       slider.style.transition = 'transform 900ms';
       slider.style.transform = `translateY(-${slideHeight * index}%)`;

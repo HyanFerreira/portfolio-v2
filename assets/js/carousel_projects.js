@@ -9,18 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
   let carouselItemGap = 30;
 
   function updateCardWidth() {
-    if (window.innerWidth > 2300) {
-      carouselBtns.style.display = 'none';
-      // carouselItem = 300;
-      // console.log('300');
-    } else if (window.innerWidth > 1300) {
-      carouselItem = 240;
-      carouselBtns.style.display = 'none';
-      // console.log('200');
+    if (window.innerWidth <= 1300 && window.innerHeight <= 600) {
+      carouselBtns.style.display = 'flex';
     } else {
-      carouselItem = 200;
       carouselBtns.style.display = 'none';
-      // console.log('140');
     }
   }
 
