@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const slider = document.querySelector('.content-carousel');
   const nextBtn = document.querySelector('.nextBtnCarousel');
   const prevBtn = document.querySelector('.prevBtnCarousel');
+  const carouselBtns = document.querySelector('.content-carousel-btns');
 
   let isTransitioning = false;
   let carouselItem = 240;
@@ -9,13 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateCardWidth() {
     if (window.innerWidth > 2300) {
-      carouselItem = 300;
+      carouselBtns.style.display = 'none';
+      // carouselItem = 300;
       // console.log('300');
     } else if (window.innerWidth > 1300) {
       carouselItem = 240;
+      carouselBtns.style.display = 'none';
       // console.log('200');
     } else {
-      carouselItem = 140;
+      carouselItem = 200;
+      carouselBtns.style.display = 'none';
       // console.log('140');
     }
   }
@@ -58,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   let clickable = true;
-  
+
   prevBtn.addEventListener('click', () => {
     if (clickable) {
       transitionPrev();
