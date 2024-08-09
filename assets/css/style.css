@@ -1014,9 +1014,9 @@ h1 {
     border: 3px solid #0DB75F;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 10px;
     border-radius: 5px;
-    padding: 30px 20px 20px 20px;
+    padding: 30px 20px 15px 20px;
     height: 100%;
     justify-content: center;
 }
@@ -1046,8 +1046,7 @@ h1 {
 
 .input-label,
 .btn-submit-contact {
-    margin-bottom: 5px;
-
+    margin-bottom: 3px;
 }
 
 .input-label input,
@@ -1110,6 +1109,13 @@ h1 {
 #emailLabel.error,
 #messageLabel.error {
     color: red;
+}
+
+#errorName,
+#errorEmail,
+#errorMessage,
+#errorSubmit {
+    height: 18px;
 }
 
 .media-links-contact {
@@ -1657,10 +1663,16 @@ h1 {
         justify-content: center;
         display: flex;
         width: 100%;
+        margin-bottom: 5px;
     }
 
     .thanks {
         width: 90%;
+    }
+
+    .footer-index a,
+    .footer-index span {
+        font-size: .8rem;
     }
 }
 

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let carouselItemGap = 30;
 
   function updateCardWidth() {
-    if (window.innerWidth <= 1300 && window.innerHeight <= 600) {
+    if (window.innerWidth <= 1300) {
       carouselBtns.style.display = 'flex';
     } else {
       carouselBtns.style.display = 'none';
