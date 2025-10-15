@@ -547,8 +547,12 @@
                         </div>
                     </div>
                     <footer class="footer-index">
-                        <span>Copyright © 2024 - <a href="https://hyanferreira.com.br/">hyanferreira.com.br</a> - Todos
-                            os direitos reservados</span>
+                        <span>
+                            Copyright © <span id="year"></span> -
+                            <a href="https://hyanferreira.netlify.app/">hyanferreira.netlify.app</a> -
+                            All rights reserved
+                        </span>
+                        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
                     </footer>
                 </section>
             </div>
